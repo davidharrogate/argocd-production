@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: devops-toolkit
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   project: production
   source:
@@ -24,5 +22,6 @@ spec:
   syncPolicy:
     automated:
       selfHeal: true
+      allowEmpty: true
       prune: true
 

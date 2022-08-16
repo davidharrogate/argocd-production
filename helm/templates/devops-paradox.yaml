@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: devops-paradox
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   project: production
   source:
@@ -24,4 +22,5 @@ spec:
   syncPolicy:
     automated:
       selfHeal: true
+      allowEmpty: true
       prune: true
